@@ -1,4 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App.js";
-ReactDOM.render(<App />, document.getElementById("root"));
+import { Provider } from 'mobx-react'
+import stores from './stores'
+
+ReactDOM.render(
+  <Provider {...stores}>
+    <App />
+  </Provider>, document.getElementById("root"));

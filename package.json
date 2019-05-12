@@ -1,12 +1,12 @@
 {
   "name": "mobxtest",
   "version": "1.0.0",
-  "description": "Mobx bolireplate",
+  "description": "Github viewer application based on mobx",
   "main": "index.js",
   "scripts": {
     "test": "test",
     "start": "webpack-dev-server --content-base public/ --open --config webpack.config.js",
-    "build": "webpack --config webpack.dev.js"
+    "build": "webpack --config webpack.config.prd.js"
   },
   "repository": {
     "type": "git",
@@ -22,12 +22,21 @@
   },
   "homepage": "https://github.com/obmok/mobx_test#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-preset-react-app": "^8.0.0",
+    "mobx": "^5.9.4",
+    "mobx-react": "^5.4.3",
+    "parse-link-header": "^1.0.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-},
+    "react-dom": "^16.8.6",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",

@@ -1,0 +1,106 @@
+:root {
+  --ord-font: 12px verdana, sans-serif;
+  --control-font: 10px verdana, sans-serif;
+  --heading-font: bold 14px verdana, sans-serif;
+  --color-dark: black;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header, section, footer, aside, nav, article, figure, figcaption,hgroup, div{
+  display: block;
+}
+
+body {
+  width: 100%;
+}
+
+.head{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-dark);
+  padding: 15px;
+}
+
+.heading{
+  font: var(--heading-font);
+  color: white;
+  width: 180px;
+}
+
+nav > * {
+  width: 80px;
+  padding: 10px;
+  justify-content: center;
+  font: var(--ord-font);
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+.linkActive{
+  font-weight: bold;
+}
+
+.list{
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  padding: 10px;
+  font: var(--ord-font);
+  height: 500px;
+}
+
+.listItem{
+  padding: 2px 10px;
+}
+
+.navbar{
+  padding: 5px 20px;
+}
+
+.navbarButton{
+  font: var(--control-font);
+  width: 30px;
+  height: 23px;
+}
+
+.searchBar{
+  display: flex;
+  flex-direction: row;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+input{
+  margin: 0px 10px;
+}
+
+select{
+  margin: 0px 10px;
+}
+
+.searchBarText{
+  font: var(--ord-font);
+  margin: 2px 0px 0px 0px;
+}
+
+.button{
+  font: var(--control-font);
+  padding: 0px 5px;
+}
+
+.link{
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.validationError{
+  color: red;
+  font: var(--ord-font);
+  margin: 2px 0px 0px 10px;
+}
+
