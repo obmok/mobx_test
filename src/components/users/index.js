@@ -9,9 +9,9 @@ class UsersList extends Component {
 
   render() {
     const {list, size, loading } = this.props.users;
-    let usersList, usersLoading
+    let usersList, usersLoading;
     if (loading)
-      usersLoading = <Loader/>
+      usersLoading = <Loader />
     else{
       const usersJS = size > 0 ? list : null;
       usersList = usersJS ? usersJS.map((user, key) => <User key={key} login={user.login} url={user.html_url} />) 

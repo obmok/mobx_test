@@ -4,7 +4,7 @@ class Loader extends Component {
 
   render() {
     return (
-      <span className='loader'>Loading...</span>
+      <span className='message'>Loading...</span>
     )
   }
 }

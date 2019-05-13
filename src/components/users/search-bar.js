@@ -27,11 +27,11 @@ class UsersSearchBar extends Component {
   }
 
   @action handleLoginChange(e){
-    this.login = e.target.value
+    this.login = e.target.value;
   }
 
   @action handlePageSizeChange(e){
-    this.pageSize = e.target.value
+    this.pageSize = e.target.value;
   }
 
   render() {

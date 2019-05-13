@@ -21,13 +21,13 @@ class NavBar extends Component {
   handleLast = () => this.props.move(this.props.links.last.url)
 
   render() {
-    const { links } = this.props
-    let first, prev, next, last
+    const { links } = this.props;
+    let first, prev, next, last;
     if (links){
-      first = links.first ? <button className='navbarButton' onClick={this.handleFirst}> {'|< '} </button>: null
-      prev = links.prev ? <button className='navbarButton' onClick={this.handlePrev}> {'< '} </button>: null
-      next = links.next ? <button className='navbarButton' onClick={this.handleNext}> {'> '} </button>: null
-      last = links.last ? <button className='navbarButton' onClick={this.handleLast}> {'>| '} </button>: null
+      first = links.first ? <button className='navbarButton' onClick={this.handleFirst}> {'|< '} </button>: null;
+      prev = links.prev ? <button className='navbarButton' onClick={this.handlePrev}> {'< '} </button>: null;
+      next = links.next ? <button className='navbarButton' onClick={this.handleNext}> {'> '} </button>: null;
+      last = links.last ? <button className='navbarButton' onClick={this.handleLast}> {'>| '} </button>: null;
     } 
     return (
       <div className='navbar'>

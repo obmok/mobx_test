@@ -12,7 +12,7 @@ class Repository extends Component {
   }
 
   render() {
-    const title = this.props.forks && this.props.stars ? 'forks: '+ this.props.forks + ' stars: ' + this.props.stars : ''
+    const title = this.props.forks && this.props.stars ? 'forks: '+ this.props.forks + ' stars: ' + this.props.stars : '';
     return (
       <div className='listItem'>
         <a className='link' title={title} href={this.props.url}>{this.props.name}</a>

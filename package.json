@@ -1,10 +1,10 @@
 {
   "name": "mobxtest",
   "version": "1.0.0",
-  "description": "Github viewer application based on mobx",
+  "description": "Github viewer application based based on react/mobx",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "start": "webpack-dev-server --content-base public/ --open --config webpack.config.js",
     "build": "webpack --config webpack.config.prd.js"
   },
@@ -41,6 +41,9 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.0",
+    "jest": "^24.8.0",
     "react-hot-loader": "^4.8.4",
     "style-loader": "^0.23.1",
     "webpack": "^4.30.0",

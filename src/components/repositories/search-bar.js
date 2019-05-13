@@ -9,11 +9,11 @@ class RepositoriesSearchBar extends Component {
   static propTypes = {
     find: PropTypes.func.isRequired
   }
-  @observable name = ''
-  @observable stars = ''
-  @observable forks = ''
-  @observable pageSize = 100
-  @observable validationError = ''
+  @observable name = '';
+  @observable stars = '';
+  @observable forks = '';
+  @observable pageSize = 100;
+  @observable validationError = '';
 
   constructor(props) {
     super(props);
@@ -28,11 +28,11 @@ class RepositoriesSearchBar extends Component {
     e.preventDefault();
     let error = ''
     if ((this.forks || this.stars) && !this.name) 
-      error = <span className='validationError'> Please specify repository name!</span>
+      error = <span className='validationError'> Please specify repository name!</span>;
     if (this.forks && isNaN(this.forks))
-      error = <span className='validationError'> Forks value is not a number!</span>
+      error = <span className='validationError'> Forks value is not a number!</span>;
     if (this.stars && isNaN(this.stars))
-      error = <span className='validationError'> Stars value is not a number!</span>
+      error = <span className='validationError'> Stars value is not a number!</span>;
     this.validationError = error
     if (!error){
       let criteria = new Map();
@@ -45,19 +45,19 @@ class RepositoriesSearchBar extends Component {
   }
 
   @action handleNameChange(e){
-    this.name = e.target.value
+    this.name = e.target.value;
   }
 
   @action handleStarsChange(e){
-    this.stars = e.target.value
+    this.stars = e.target.value;
   }
 
   @action handleForksChange(e){
-    this.forks = e.target.value
+    this.forks = e.target.value;
   }
 
   @action handlePageSizeChange(e){
-    this.pageSize = e.target.value
+    this.pageSize = e.target.value;
   }
 
   render() {
