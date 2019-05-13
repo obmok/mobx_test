@@ -1,57 +1,34 @@
 import React, { Component } from 'react'
-import {observer, inject} from 'mobx-react'
 import Repository from './repository'
-import NavBar from '../nav-bar'
-import RepositoriesSearchBar from './search-bar'
+import Loader from '../loader'
+import {observer, inject} from 'mobx-react'
 
 @inject('repositories')
 @observer
-class Repositories extends Component {
-
-  constructor(props) {
-    super(props);
-    this.goToPage = this.goToPage.bind(this);
-    this.search = this.search.bind(this);
-  }
-
+class RepositoriesList extends Component {
+  
   componentDidMount() {
     const {repositories} = this.props;
     if (!repositories.loaded) repositories.loadAll();
   }
 
-  goToPage(url){
-    const {repositories} = this.props;
-    repositories.loadResultsPage(url);
-  }
-
-  search(criteria){
-    const {repositories} = this.props;
-    if (criteria.get('name') !== '')
-      repositories.search(criteria)
-    else
-      repositories.loadAll(criteria);
-  }
-
   render() {
-    const {links, list, size, loading } = this.props.repositories;
-    let repositoriesJS, repositoriesList, repositoriesLoading
+    const {list, size, loading } = this.props.repositories;
+    let repoList, repoLoading
     if (loading)
-      repositoriesLoading = 'Loading...'
+      repoLoading = <Loader/>
     else{
-      repositoriesJS = size > 0 ? list : null;
-      repositoriesList = repositoriesJS ? repositoriesJS.map((repository, key) => <Repository key={key} id={key} name={repository.full_name} url={repository.html_url} stars={repository.stargazers_count} forks={repository.forks}/>) : 'No repositories were found'
+      const repoJS = size > 0 ? list : null;
+      repoList = repoJS ? repoJS.map((repository, key) => <Repository key={key} id={key} name={repository.full_name} url={repository.html_url} stars={repository.stargazers_count} forks={repository.forks}/>) 
+        : <span className='message'>No repositories were found</span>
     }
     return (
-      <div>
-        <RepositoriesSearchBar find={this.search}/>
-        <div className='list'>
-          {repositoriesList}
-          {repositoriesLoading}
-        </div>
-        <NavBar links={links} move={this.goToPage}/>
+      <div className='list'>
+        {repoList}
+        {repoLoading}
       </div>
     )
   }
 }
 
-export default Repositories
+export default RepositoriesList

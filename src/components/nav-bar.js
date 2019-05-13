@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class NavBar extends Component {
+  
   static propTypes = {
-    links: PropTypes.array
+    links: PropTypes.object.isRequired
   }
 
   constructor(props) {

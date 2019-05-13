@@ -1,7 +1,7 @@
 :root {
   --ord-font: 12px verdana, sans-serif;
   --control-font: 10px verdana, sans-serif;
-  --heading-font: bold 14px verdana, sans-serif;
+  --heading-font: 14px verdana, sans-serif;
   --color-dark: black;
 }
 
@@ -18,11 +18,16 @@ body {
   width: 100%;
 }
 
+h1{
+  font: var(--heading-font);
+  padding: 15px 10px 5px 10px;
+}
+
 .head{
   display: flex;
   flex-direction: row;
   background-color: var(--color-dark);
-  padding: 15px;
+  padding: 10px;
 }
 
 .heading{
@@ -49,7 +54,7 @@ nav > * {
   display: flex;
   flex-flow: column wrap;
   align-content: flex-start;
-  padding: 10px;
+  padding: 5px;
   font: var(--ord-font);
   height: 500px;
 }
@@ -103,4 +108,10 @@ select{
   font: var(--ord-font);
   margin: 2px 0px 0px 10px;
 }
+
+.message{
+  font: var(--ord-font);
+  padding: 10px;
+}
+
 

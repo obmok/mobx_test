@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class Repository extends Component {
+  
   static propTypes = {
     forks: PropTypes.number,
     stars: PropTypes.number,

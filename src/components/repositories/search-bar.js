@@ -5,8 +5,9 @@ import {observable, action} from 'mobx'
 
 @observer
 class RepositoriesSearchBar extends Component {
+  
   static propTypes = {
-    find: PropTypes.func
+    find: PropTypes.func.isRequired
   }
   @observable name = ''
   @observable stars = ''
@@ -25,14 +26,15 @@ class RepositoriesSearchBar extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.validationError = ''
+    let error = ''
     if ((this.forks || this.stars) && !this.name) 
-      this.validationError = <span className='validationError'> Please specify repository name!</span>
+      error = <span className='validationError'> Please specify repository name!</span>
     if (this.forks && isNaN(this.forks))
-      this.validationError = <span className='validationError'> Forks value is not a number!</span>
+      error = <span className='validationError'> Forks value is not a number!</span>
     if (this.stars && isNaN(this.stars))
-      this.validationError = <span className='validationError'> Stars value is not a number!</span>
-    if (!this.validationError){
+      error = <span className='validationError'> Stars value is not a number!</span>
+    this.validationError = error
+    if (!error){
       let criteria = new Map();
       criteria.set('name', this.name);
       criteria.set('perPage', this.pageSize);

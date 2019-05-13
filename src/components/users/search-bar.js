@@ -6,7 +6,7 @@ import {observable, action} from 'mobx'
 @observer
 class UsersSearchBar extends Component {
   static propTypes = {
-    find: PropTypes.func
+    find: PropTypes.func.isRequired
   }
   @observable login = ''
   @observable pageSize = 30
@@ -36,20 +36,18 @@ class UsersSearchBar extends Component {
 
   render() {
     return (
-      <div>
-        <form className="searchBar" >
-          <span className="searchBarText">Search by:</span>
-          <input type="text" value={this.login} name="login" placeholder="login" onChange={this.handleLoginChange} maxLength="30"/>
-          <span className="searchBarText">Lines per page: </span>
-          <select name="pageSize" onChange={this.handlePageSizeChange}>
-            <option key="q30" id="q30" value="30">30</option>
-            <option key="q45" id="q45" value="45">45</option>
-            <option key="q70" id="q70" value="70">70</option>
-            <option key="q100" id="q100" value="100">100</option>
-          </select>
-          <button className='button' onClick={this.handleClick}>Show</button>
-        </form>
-      </div>
+      <form className="searchBar" >
+        <span className="searchBarText">Search by:</span>
+        <input type="text" value={this.login} name="login" placeholder="login" onChange={this.handleLoginChange} maxLength="30"/>
+        <span className="searchBarText">Lines per page: </span>
+        <select name="pageSize" onChange={this.handlePageSizeChange}>
+          <option key="q30" id="q30" value="30">30</option>
+          <option key="q45" id="q45" value="45">45</option>
+          <option key="q70" id="q70" value="70">70</option>
+          <option key="q100" id="q100" value="100">100</option>
+        </select>
+        <button className='button' onClick={this.handleClick}>Show</button>
+      </form>
     )
   }
 }
